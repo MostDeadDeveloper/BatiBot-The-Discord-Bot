@@ -32,6 +32,7 @@ SELECTED_CHANNEL = ""
             # / if it is  a message pertaining to the author, tell the message sender to wait as they notify the creator of his/her response
             # / and we leave bot mode and go into user mode
             # / if no, then just go to idle and wait for further responses.
+        # set up some form of logging to .log files. Log errors to discord.log and make a log file for the conversations made and received in conversation.log
 
 # Future Wants: 
     # - Make Bot Mode like an actual bot, reacting to common messages that needs to be responded.
