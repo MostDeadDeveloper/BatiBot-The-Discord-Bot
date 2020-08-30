@@ -67,7 +67,7 @@ def instance_of(type):
     return _InstanceOfValidator(type)
 
 
-@attrs(repr=False, frozen=True, slots=True)
+@attrs(repr=False, frozen=True)
 class _MatchesReValidator(object):
     regex = attrib()
     flags = attrib()
@@ -171,8 +171,7 @@ def provides(interface):
     performed using ``interface.providedBy(value)`` (see `zope.interface
     <https://zopeinterface.readthedocs.io/en/latest/>`_).
 
-    :param interface: The interface to check for.
-    :type interface: ``zope.interface.Interface``
+    :param zope.interface.Interface interface: The interface to check for.
 
     :raises TypeError: With a human readable error message, the attribute
         (of type `attr.Attribute`), the expected interface, and the
