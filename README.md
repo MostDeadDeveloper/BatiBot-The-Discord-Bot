@@ -58,3 +58,8 @@ There is a clickable button in your top-right, click it and it will give a copy 
 - Go to github and make a pull request and compare your forked branch to my main repository. 
 
 -  Note : A pull request is where we evaluate and finalize your submitted work, and make any possible changes. In the industry, this process is also known as "code review".
+
+# Future Changes and Wants
+    - Make Bot Mode like an actual bot, reacting to common messages that needs to be responded.
+    - Shift to user and bot mode in any form of time, it is not only limited to after a new member joining
+    - MAke a channel where they can talk to the bot asking some common or repetitive questions, if it is not in this channel the bot does not reply appropriately.
