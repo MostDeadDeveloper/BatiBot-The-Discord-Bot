@@ -39,7 +39,15 @@ SELECTED_CHANNEL = ""
     # Shift to user and bot mode in any form of time, it is not only limited to after a new member joining
     # MAke a channel where they can talk to the bot asking some common or repetitive questions, if it is not in this channel the bot does not reply appropriately.
 
+#responds to mentions
+@client.event 
+async def on_message(message):
+    for x in message.mentions:
+        if (x == client.user):
+            await message.channel.send(f"{message.author.mention} hello there")
 
+    await client.process_commands(message)
+   
 
 @client.event
 async def on_ready():
