@@ -10,6 +10,8 @@ Imagine like your half robot suddenly talking when you are busy or washing the d
 and then you can replace the bot when you are no longer busy, and it informs whatever you missed for you.
 isn't that fucking sick? Well for me it is, so yea consider contributing.
 
+# So how do I use this bot of yours?
+ - To be Added, Gonna do it next time, need that sleep and coffee
 ### Git Commands, Tips, Tricks and How to Contribute To this Project
 ### Legend and Explanation of Each Command
 
