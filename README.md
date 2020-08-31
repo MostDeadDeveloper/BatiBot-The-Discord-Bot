@@ -1,6 +1,14 @@
 # BatiBot-The-Discord-Bot
-The Discord Bot that will replace my existence and automate most of my stuff.
 
+The Discord Bot that will replace my existence and automate most of my stuff.
+Don't Question The Name, I called it that to annoy a certain someone.
+
+# What does this bot even do ? 
+This discord bot aims to automate some tasks that I think most people struggle with.
+And probably my main reason is , isn't it so cool to be able to change personalities and controls with a bot? 
+Imagine like your half robot suddenly talking when you are busy or washing the dishes or something,
+and then you can replace the bot when you are no longer busy, and it informs whatever you missed for you.
+isn't that fucking sick? Well for me it is, so yea consider contributing.
 
 ### Git Commands, Tips, Tricks and How to Contribute To this Project
 ### Legend and Explanation of Each Command
