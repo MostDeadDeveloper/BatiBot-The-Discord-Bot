@@ -37,12 +37,9 @@ Please install Git in your machine, for you to be able to use it in your respect
 Use this link as reference.
 Link: https://www.atlassian.com/git/tutorials/install-git
 
-# Step 2 :  How to Get a Copy of this repository.
+# Step 2 :  Fork this Repository
+There is a clickable button in your top-right, click it and it will give a copy of my entire repository to you.
 
-Find a suitable area to put the files and type the command. 
-```
-  - git clone https://github.com/MostDeadDeveloper/Coding-Exercises-To-Python.git
-```
 
 # Step 3 : Submitting my work
 
@@ -58,6 +55,6 @@ Find a suitable area to put the files and type the command.
 ### I reccomend you do this everytime you are finished coding for the day. That way we can track past and present versions of your work, utilizing Github's version control system.
 
 # Step 4 : Do this part if you have finished something and want to "submit your final answer".
-- Go to github and make a pull request. 
+- Go to github and make a pull request and compare your forked branch to my main repository. 
 
 -  Note : A pull request is where we evaluate and finalize your submitted work, and make any possible changes. In the industry, this process is also known as "code review".
