@@ -1,13 +1,8 @@
 # BatiBot-The-Discord-Bot
 The Discord Bot that will replace my existence and automate most of my stuff.
 
-# Coding-Exercises-To-Python
 
-
-Currently Contains Problem 1 and 2 Only. Problem 3, 4 and 5 is currently ongoing.
-
-# FAQS:
-
+### Git Commands, Tips, Tricks and How to Contribute To this Project
 ### Legend and Explanation of Each Command
 
 | Commands                                     | Command's Use and Explanation                                         |
