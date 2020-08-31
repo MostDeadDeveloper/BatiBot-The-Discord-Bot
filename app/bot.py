@@ -21,19 +21,6 @@ SELECTED_CHANNEL = ""
     # - 
  # 
 
-# Current Desired Features:
-        # - Perform some form of switcheroo with user and bot interchangeably
-        # - greet the new members joining when in Bot Mode
-        # - perform a interchangeable chat interaction between the new joining member when not in Bot Mode
-            # / a possible integration is that after greeting the user of newly joining, it asks the user to leave bot mode and 
-            # / chat with the new joined member. 
-            # / if no, then just go to idle and wait for further responses. 
-        # - the bot must also be able to check for new messages and check if their is a specific keyword pertaining to the author of the bot.
-            # / if it is  a message pertaining to the author, tell the message sender to wait as they notify the creator of his/her response
-            # / and we leave bot mode and go into user mode
-            # / if no, then just go to idle and wait for further responses.
-        # set up some form of logging to .log files. Log errors to discord.log and make a log file for the conversations made and received in conversation.log
-
 # Future Wants: 
     # - Make Bot Mode like an actual bot, reacting to common messages that needs to be responded.
     # Shift to user and bot mode in any form of time, it is not only limited to after a new member joining
