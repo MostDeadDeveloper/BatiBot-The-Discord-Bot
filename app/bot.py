@@ -8,7 +8,6 @@ from dotenv import load_dotenv
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 USERID = os.getenv('DISCORD_USER')
-
 client = discord.Client()
 BOT_MODE = True
 SELECTED_CHANNEL_INDEX = 0
@@ -58,9 +57,8 @@ async def on_ready():
 
     SELECTED_CHANNEL = client.guilds[selected_index].channels[selected_channel_index]
     #await client.guilds[selected_index].channels[selected_channel_index].send("Discord Bot Online.")
-
     print(SELECTED_CHANNEL)
-
+       
 
 @client.event
 async def on_message(message):
@@ -80,8 +78,8 @@ async def on_message(message):
     
     # messages are for test purpose only. insert a more 'formal' message for actual use.
     randomMessage = [
-        "busy pa si boss Vincent, reply na lang siya mamaya.", 
-        "naghuhugas pa ng pinggan. jk babalik 'yon maya-maya.",
+        "busy pa si boss Carl, nagkakape. reply na lang siya mamaya.", 
+        "naghuhugas pa ng pinggan si Carl. jk babalik 'yon maya-maya.",
         "tulog pa ata, gisingin ko wait. chour rreply nalang siya mamaya"
     ]
 
@@ -93,16 +91,36 @@ async def on_message(message):
     ]
     # if the author is mentioned, and send back a message. 
     # replace @!723498127944056845 with the ID of the user that is needed to be checked for mentions.
-    if '@!723498127944056845' in message.content:
-        # send in a custom message
+    userid=int(USERID)
+    # `@!` is needed to be added to the user ID to check for mentions.
+    mentionid=f'@!{userid}'
+    if mentionid in message.content:
+        # option for send in a custom message
     #   if BOT_MODE == False: 
     #       response = input('Type in your reply: ')
     #       await message.channel.send(f"{message.author.mention}, {response}") 
     #   else:
-            print(f"{message.author} mentioned you!")
-            response = random.choice(randomMessage)
-            greet = random.choice(randomGreeting)
-            await message.channel.send(f"{greet} {message.author.mention}!, {response}") 
+            
+            # get the member
+            guild = message.author.guild
+            member = discord.Guild.get_member(self=guild, user_id=userid)
+
+            # checks if the user's status is online. 
+            if member.status is not discord.Status.online: 
+                response = random.choice(randomMessage)
+                greet = random.choice(randomGreeting)
+                msgStr = (f"{greet} {message.author.mention}!, {response}")
+                fromDescription = (f"A reply to {member.nick}'s message!")
+                embed = discord.Embed(
+                    title = None,
+                    description = None,
+                    colour = discord.Color.blue()
+                )
+                embed.add_field(name=fromDescription,value=message.content,inline=False)
+                await message.channel.send(embed =embed,content=msgStr)
+                # previous method, no embedding of message. only mentions the author.
+                # await message.channel.send(f"{greet} {message.author.mention}!, {response}") 
+    
     
     #responds to mentions - from BoredPaper's PR
     #for x in message.mentions:
