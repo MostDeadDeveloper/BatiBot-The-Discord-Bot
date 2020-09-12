@@ -1,16 +1,17 @@
-# bot.py
+from dotenv import load_dotenv
 import os
+import random
 
 import discord
-from dotenv import load_dotenv
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
+USERID = os.getenv('DISCORD_USER')
 
 client = discord.Client()
 BOT_MODE = True
 SELECTED_CHANNEL_INDEX = 0
-SELECTED_CHANNEL = ""
+SELECTED_CHANNEL = None
 
  # Develop a condition to reply to specific messages made that pertain to you. 
  # Develop a bot mode and user mode shift. So I can shift from a bot talking to me being the  person talking
@@ -66,6 +67,65 @@ async def on_message(message):
 
     if message.content.startswith('$replace'):
         await message.channel.send('Conducting an act of Replacement.')
+
+    #await client.guilds[selected_index].channels[selected_channel_index].send("Discord Bot Online.")
+    print(SELECTED_CHANNEL)
+
+
+    # messages are for test purpose only. insert a more 'formal' message for actual use.
+    randomMessage = [
+        'User is unavailable at the moment. I will contact the user regarding your inquiry.',
+
+        'The User is Quite Busy at The Moment, Don\'t Worry, I will contact them for you! Thank you.',
+    ]
+
+    randomGreeting = [
+        'Greetings!',
+        'Hi!',
+    ]
+    userid = int(USERID)
+    mentionid = f'@!{userid}'
+# `@!` is needed to be added to the user ID to check for mentions.
+    if mentionid in message.content:
+        # option for send in a custom message
+    #   if BOT_MODE == False: 
+    #       response = input('Type in your reply: ')
+    #       await message.channel.send(f"{message.author.mention}, {response}") 
+    #   else:
+
+        guild = message.author.guild
+        member = discord.Guild.get_member(
+            self=guild,
+            user_id=userid
+        )
+
+        # checks if the user's status is online. 
+        if member.status is not discord.Status.online:
+            response = random.choice(randomMessage)
+            greet = random.choice(randomGreeting)
+
+            msgStr = (f'{greet} {message.author.mention}!, {response}')
+            fromDescription = (f'A reply to {member.nick}\'s message!')
+
+            embed = discord.Embed(
+                title=None,
+                description=None,
+                colour = discord.Color.blue()
+            )
+            embed.add_field(
+                name=fromDescription,
+                value=message.content,
+                inline=False
+            )
+            await message.channel.send(
+                embed=embed,
+                content=msgStr
+            )
+
+    #responds to mentions - from BoredPaper's PR
+    # for x in message.mentions:
+        # if (x == client.user):
+            # await message.channel.send(f"{greet}, {message.author.mention}")
 
 # @client.event
 # async def on_member_join(member):
