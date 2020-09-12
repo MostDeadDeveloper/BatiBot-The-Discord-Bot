@@ -13,22 +13,6 @@ BOT_MODE = True
 SELECTED_CHANNEL_INDEX = 0
 SELECTED_CHANNEL = None
 
- # Develop a condition to reply to specific messages made that pertain to you. 
- # Develop a bot mode and user mode shift. So I can shift from a bot talking to me being the  person talking
- #  - this needs asynchronous input and output. Continously ask for input when not in idle and can speak instead of the bot. 
-    # - when in idle, the bot will talk
-    # - configure in the future, to make the bot to react to certain conditions a bit better, the current proposed solution
-        # / is just reacting to certain keywords
-    # - 
- # 
-
-# Future Wants: 
-    # - Make Bot Mode like an actual bot, reacting to common messages that needs to be responded.
-    # Shift to user and bot mode in any form of time, it is not only limited to after a new member joining
-    # MAke a channel where they can talk to the bot asking some common or repetitive questions, if it is not in this channel the bot does not reply appropriately.
-
-
-
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
