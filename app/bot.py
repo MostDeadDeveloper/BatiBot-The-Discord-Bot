@@ -3,6 +3,7 @@ import os
 import random
 
 import discord
+import logging 
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -12,6 +13,8 @@ client = discord.Client()
 BOT_MODE = True
 SELECTED_CHANNEL_INDEX = 0
 SELECTED_CHANNEL = ""
+
+extra = {}
 
   # Develop a condition to reply to specific messages made that pertain to you. 
  # Develop a bot mode and user mode shift. So I can shift from a bot talking to me being the  person talking
@@ -60,7 +63,13 @@ async def on_message(message):
             message.channel,
         )
     )
-
+    # for logging, identifies the message sender
+    extra["messageSource"] = f"{message.author.guild} - {message.channel}"
+    if message.author == client.user:
+        extra["messageSender"] = f"{client.user.name}#{client.user.discriminator}"
+    else:
+        extra["messageSender"] = f"{message.author}"
+    
     if message.author == client.user:
         return 
 
@@ -90,32 +99,44 @@ async def on_message(message):
     #       response = input('Type in your reply: ')
     #       await message.channel.send(f"{message.author.mention}, {response}") 
     #   else:
-            
-            # get the member
-            guild = message.author.guild
-            member = discord.Guild.get_member(self=guild, user_id=userid)
 
-            # checks if the user's status is online. 
-            if member.status is not discord.Status.online: 
-                response = random.choice(randomMessage)
-                greet = random.choice(randomGreeting)
-                msgStr = (f"{greet} {message.author.mention}!, {response}")
-                fromDescription = (f"A reply to {member.nick}'s message!")
-                embed = discord.Embed(
-                    title = None,
-                    description = None,
-                    colour = discord.Color.blue()
-                )
-                embed.add_field(name=fromDescription,value=message.content,inline=False)
-                await message.channel.send(embed =embed,content=msgStr)
-                # previous method, no embedding of message. only mentions the author.
-                # await message.channel.send(f"{greet} {message.author.mention}!, {response}") 
-    
-    
+        # logging messages to conversation.log
+        logger = logging.getLogger('discord')
+        logger.setLevel(logging.INFO)
+        handler = logging.FileHandler(filename='conversation.log', encoding='utf-8', mode='a')
+        handler.setFormatter(logging.Formatter('%(asctime)s MESSAGE: %(messageSender)s: %(message)s :  %(messageSource)s:'))
+        logger.addHandler(handler)
+
+        logger = logging.LoggerAdapter(logger,extra)
+        logger.info(f'{message.content}')
+
+        # get the member
+        guild = message.author.guild
+        member = discord.Guild.get_member(self=guild, user_id=userid)
+
+        # checks if the user's status is online. 
+        if member.status is not discord.Status.online: 
+            response = random.choice(randomMessage)
+            greet = random.choice(randomGreeting)
+            msgStr = (f"{greet} {message.author.mention}!, {response}")
+            fromDescription = (f"A reply to {member.nick}'s message!")
+            embed = discord.Embed(
+                title = None,
+                description = None,
+                colour = discord.Color.blue()
+            )
+            embed.add_field(name=fromDescription,value=message.content,inline=False)
+            await message.channel.send(embed =embed,content=msgStr)
+            # previous method, no embedding of message. only mentions the author.
+            # await message.channel.send(f"{greet} {message.author.mention}!, {response}") 
+
+            # log the bot's reply
+            logger.info(f'{msgStr}')
+            
     #responds to mentions - from BoredPaper's PR
     for x in message.mentions:
         if (x == client.user):
-            await message.channel.send(f"{greet}, {message.author.mention}")
+            await message.channel.send(f"Hello, {message.author}")
         
 
 # @client.event
