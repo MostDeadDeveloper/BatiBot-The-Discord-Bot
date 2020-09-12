@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 import os
 import random
+import logging 
 
 import discord
 
@@ -12,6 +13,8 @@ client = discord.Client()
 BOT_MODE = True
 SELECTED_CHANNEL_INDEX = 0
 SELECTED_CHANNEL = None
+
+extra = {}
 
  # Develop a condition to reply to specific messages made that pertain to you. 
  # Develop a bot mode and user mode shift. So I can shift from a bot talking to me being the  person talking
@@ -62,6 +65,13 @@ async def on_message(message):
         )
     )
 
+    # for logging, identifies the message sender
+    extra["messageSource"] = f"{message.author.guild} - {message.channel}"
+    if message.author == client.user:
+        extra["messageSender"] = f"{client.user.name}#{client.user.discriminator}"
+    else:
+        extra["messageSender"] = f"{message.author}"
+
     if message.author == client.user:
         return
 
@@ -92,7 +102,16 @@ async def on_message(message):
     #       response = input('Type in your reply: ')
     #       await message.channel.send(f"{message.author.mention}, {response}") 
     #   else:
+    
+    # logging messages to conversation.log
+        logger = logging.getLogger('discord')
+        logger.setLevel(logging.INFO)
+        handler = logging.FileHandler(filename='conversation.log', encoding='utf-8', mode='a')
+        handler.setFormatter(logging.Formatter('%(asctime)s MESSAGE: %(messageSender)s: %(message)s :  %(messageSource)s:'))
+        logger.addHandler(handler)
 
+        logger = logging.LoggerAdapter(logger,extra)
+        logger.info(f'{message.content}')
         guild = message.author.guild
         member = discord.Guild.get_member(
             self=guild,
@@ -121,6 +140,9 @@ async def on_message(message):
                 embed=embed,
                 content=msgStr
             )
+
+            # log the bot's reply
+            logger.info(f'{msgStr}')
 
     #responds to mentions - from BoredPaper's PR
     # for x in message.mentions:
