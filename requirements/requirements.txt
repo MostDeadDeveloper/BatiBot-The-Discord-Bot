@@ -1,3 +1,4 @@
+wheel
 discord
-dotenv
+python-dotenv
 
