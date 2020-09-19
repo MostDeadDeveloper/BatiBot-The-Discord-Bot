@@ -24,7 +24,9 @@ SELECTED_CHANNEL = None
 
 @client.event
 async def on_ready():
-    print('We have logged in as {0.user}'.format(client))
+    print(
+        'We have logged in as {0.user}'.format(client)
+    )
     # print('Available Channels: {}'.format(client.guilds[0].channels[-1]))
     
     print("Available Guilds: ")

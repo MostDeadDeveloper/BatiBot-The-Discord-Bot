@@ -1,0 +1,4 @@
+wheel
+discord
+python-dotenv
+
