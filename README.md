@@ -11,7 +11,16 @@ and then you can replace the bot when you are no longer busy, and it informs wha
 isn't that fucking sick? Well for me it is, so yea consider contributing.
 
 # So how do I use this bot of yours?
- - To be Added, Gonna do it next time, need that sleep and coffee
+Install all needed packages by running:
+```pip install -r requirements/requirements.txt```
+
+Note: You can also use virtual environment in Python if you prefer so. I reccomend doing so, to properly manage packages in python.
+```python3 -m venv myenv```
+
+Run the bot by using the following command:
+```python3 app/bot.py```
+
+
 ### Git Commands, Tips, Tricks and How to Contribute To this Project
 ### Legend and Explanation of Each Command
 
