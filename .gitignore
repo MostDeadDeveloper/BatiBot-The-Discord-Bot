@@ -1,2 +1,2 @@
 /app/.env
-/logs/discord.log
+/logs/*.log
