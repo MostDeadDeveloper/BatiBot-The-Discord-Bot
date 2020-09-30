@@ -6,7 +6,7 @@ Don't Question The Name, I called it that to annoy a certain someone.
 # What does this bot even do ? 
 This discord bot aims to automate some tasks, that I think most people struggle with in Discord Servers.
 As of now one of the major features that I am trying to implement is making the Discord Bot display daily,
-upcoming CP (Competitive Programming Contests around the globe, with the use of the CList API.
+upcoming CP (Competitive Programming) Contests around the globe, with the use of the CList API.
 # So how do I use this bot of yours?
 Install all needed packages by running:
 ```pip install -r requirements/requirements.txt```
