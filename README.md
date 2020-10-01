@@ -71,12 +71,15 @@ There is a clickable button in your top-right, click it and it will give a copy 
 ### I reccomend you do this everytime you are finished coding for the day. That way we can track past and present versions of your work, utilizing Github's version control system.
 
 # Step 4 : Do this part if you have finished something and want to "submit your final answer".
-- Go to github and make a pull request and compare your forked branch to my main repository. 
-- To make your first pull request go to your repository on GitHub and you will see a button on the top right corner “Compare & pull request”. Click on it.
+- Go to github and make a pull request. 
+- To make your first pull request go to your repository on GitHub and you will see a clickable green button on the top right corner “Compare & pull request”. Click on it.
 - At the bottom of the page add a description of what changes you have made.
 - Congratulations! You've just made your first pull request.
 
--  Note : A pull request is where we evaluate and finalize your submitted work, and make any possible changes. In the industry, this process is also known as "code review". To learn more about how to make a pull request you can refer to this link for the official guide: https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request
+- Note : A pull request is where we evaluate and finalize your submitted work, and make any possible changes. In the industry, this process is also known as       "code review". 
+- To learn more about how to make a pull request you can refer to this link for the official guide: https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request
+- Or you can watch this tutorial 
+
 
 # Future Changes and Wants
     - Make Bot Mode like an actual bot, reacting to common messages that needs to be responded.
