@@ -77,9 +77,7 @@ There is a clickable button in your top-right, click it and it will give a copy 
 - Congratulations! You've just made your first pull request.
 
 - Note : A pull request is where we evaluate and finalize your submitted work, and make any possible changes. In the industry, this process is also known as       "code review". 
-- To learn more about how to make a pull request you can refer to this link for the official guide: https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request
-- Or you can watch this tutorial 
-
+- To learn more about how to make a pull request you can refer to this link for the official guide: https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request 
 
 # Future Changes and Wants
     - Make Bot Mode like an actual bot, reacting to common messages that needs to be responded.
