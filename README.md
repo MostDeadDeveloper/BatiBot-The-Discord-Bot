@@ -72,10 +72,14 @@ There is a clickable button in your top-right, click it and it will give a copy 
 
 # Step 4 : Do this part if you have finished something and want to "submit your final answer".
 - Go to github and make a pull request and compare your forked branch to my main repository. 
+- To make your first pull request go to your repository on GitHub and you will see a button on the top right corner “Compare & pull request”. Click on it.
+- At the bottom of the page add a description of what changes you have made.
+- Congratulations! You've just made your first pull request.
 
--  Note : A pull request is where we evaluate and finalize your submitted work, and make any possible changes. In the industry, this process is also known as "code review".
+-  Note : A pull request is where we evaluate and finalize your submitted work, and make any possible changes. In the industry, this process is also known as "code review". To learn more about how to make a pull request you can refer to this link for the official guide: https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request
 
 # Future Changes and Wants
     - Make Bot Mode like an actual bot, reacting to common messages that needs to be responded.
     - Shift to user and bot mode in any form of time, it is not only limited to after a new member joining
     - MAke a channel where they can talk to the bot asking some common or repetitive questions, if it is not in this channel the bot does not reply appropriately.
+
