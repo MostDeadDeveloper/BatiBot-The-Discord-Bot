@@ -54,14 +54,17 @@ Use this link as reference.
 Link: https://www.atlassian.com/git/tutorials/install-git
 
 # Step 2 :  Fork this Repository
-There is a clickable button in your top-right, click it and it will give a copy of my entire repository to you.
+There is a clickable button in your top-right called "Fork", click on it and it will give a copy of my entire repository to you.
 
 
-# Step 3 : Submitting my work
+# Step 3 : Submitting the work
+
 After forking the repositiory go to the repository which you will now be able to see on your profile. Once in the GitHub repo, click on the green button that says, "Clone or download". A dropdown will show you a password protected SSH key. You can change it to HTTP by clicking "Use HTTPS" in the upper right-hand corner of that dropdown. Copy the link from there. Now open the terminal and write these commands.
 
 - Type the command : ```git clone {HTTPS ADDRESS}```
-- Go to the repository/directory/folder where this copy of the repository is saved.
+- Type the command : ```cd {NAME OF REPOSITORY} ```
+- This will create a local copy of the repository on your machine.
+- Now Go to the repository/directory/folder where this copy of the repository is saved.
 - Type the command : ```git checkout -b {YourName}-Branch```
 - Type the command : ```git status```
  * Check the files you have modified or changed.
