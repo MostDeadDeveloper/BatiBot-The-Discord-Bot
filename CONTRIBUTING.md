@@ -1,4 +1,11 @@
-# Step by Step Guidelines on Contributing
+# Contributing
+
+When contributing to this repository, please first discuss the change you wish to make by the use of the issues tab of this repository before making any changes.
+
+Only Issues with an assigned label, will be workable issues that can be resolved and assigned to.
+
+
+# Step by Step Guidelines on Making a Pull Request
 
 # Step 0 : What is Github?  ( Optional)
 
