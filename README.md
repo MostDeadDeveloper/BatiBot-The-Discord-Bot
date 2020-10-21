@@ -14,6 +14,12 @@ Install all needed packages by running:
 Note: You can also use virtual environment in Python if you prefer so. I reccomend doing so, to properly manage packages in python.
 ```python3 -m venv myenv```
 
+To know the values for:<br>
+```DISCORD_TOKEN```: Navigate into Discord's Developer page, select your bot and copy the bot's token.<br>
+```DISCORD_USER```: Right click your profile picture in developer page then copy your user id. You must note that only  the numerical part must be copied, after the symbol ``` '#' ``` (e.g. BatiBot#<b>111</b>)'. <br>
+
+Refer to : https://realpython.com/how-to-make-a-discord-bot-python/
+
 Run the bot by using the following command:
 ```python3 app/bot.py```
 
